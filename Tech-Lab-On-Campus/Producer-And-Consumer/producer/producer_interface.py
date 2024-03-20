@@ -22,7 +22,6 @@ class mqProducerInterface:
 
     def setupRMQConnection(self) -> None:
         # Set-up Connection to RabbitMQ service
-
         # Establish Channel
 
         # Create the exchange if not already present
