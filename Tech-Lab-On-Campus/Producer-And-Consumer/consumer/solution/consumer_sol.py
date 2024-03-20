@@ -23,6 +23,7 @@ class mqConsumer(mqConsumerInterface):
                       auto_ack=True,
                       on_message_callback=self.on_message_callback)
         self.channel.exchange_declare(exchange=self.exchange_name, exchange_type='topic')
+        self.channel.queue_bind(queue=self.queue_name, exchange=self.exchange_name, routing_key = self.binding_key)
 
     def on_message_callback(
         self, channel, method_frame, header_frame, body
